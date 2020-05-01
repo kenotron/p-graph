@@ -6,13 +6,17 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc -w --preserveWatchOutput",
-    "test": "jest"
+    "test": "jest",
+    "release": "beachball publish",
+    "check": "beachball check",
+    "change": "beachball change"
   },
   "dependencies": {
     "p-queue": "^6.3.0"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
+    "beachball": "^1.31.0",
     "jest": "^25.5.3",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
