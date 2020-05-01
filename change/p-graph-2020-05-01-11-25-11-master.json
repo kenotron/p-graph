@@ -1,0 +1,8 @@
+{
+  "type": "patch",
+  "comment": "one more way of doing pGraph() call in types",
+  "packageName": "p-graph",
+  "email": "kchau@microsoft.com",
+  "dependentChangeType": "patch",
+  "date": "2020-05-01T18:25:11.654Z"
+}
