@@ -18,6 +18,15 @@ function pGraph<
   QueueType extends Queue<RunFunction, EnqueueOptionsType> = PriorityQueue,
   EnqueueOptionsType extends QueueAddOptions = DefaultAddOptions
 >(
+  namedFunctions: NamedFunctions,
+  graph: DepGraphArray,
+  options?: Partial<Options<QueueType, EnqueueOptionsType>>
+);
+
+function pGraph<
+  QueueType extends Queue<RunFunction, EnqueueOptionsType> = PriorityQueue,
+  EnqueueOptionsType extends QueueAddOptions = DefaultAddOptions
+>(
   graph: DepGraphArray,
   options?: Partial<Options<QueueType, EnqueueOptionsType>>
 );
