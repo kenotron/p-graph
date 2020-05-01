@@ -5,7 +5,7 @@ import PQueue, {
   Options,
 } from "p-queue/dist";
 import PriorityQueue from "p-queue/dist/priority-queue";
-import { NamedFunctions, DepGraph, ScopeFunction, Id } from "./types";
+import { NamedFunctions, DepGraphMap, ScopeFunction, Id } from "./types";
 
 export class PGraph<
   QueueType extends Queue<RunFunction, EnqueueOptionsType> = PriorityQueue,
@@ -13,18 +13,20 @@ export class PGraph<
 > {
   private promises: Map<Id, Promise<unknown>> = new Map();
   private q: PQueue;
+
   namedFunctions: NamedFunctions;
-  graph: DepGraph;
+  graph: DepGraphMap;
 
   constructor(
-    namedFunctions: NamedFunctions,
-    graph: DepGraph,
+    namedFunctions,
+    graph: DepGraphMap,
     options?: Options<QueueType, EnqueueOptionsType>
   ) {
-    this.promises = new Map();
-    this.q = new PQueue(options);
     this.namedFunctions = namedFunctions;
     this.graph = graph;
+
+    this.promises = new Map();
+    this.q = new PQueue(options);
   }
 
   /**

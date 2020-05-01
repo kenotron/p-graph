@@ -1,5 +1,6 @@
 export type RunFunction = (id: Id) => Promise<unknown>;
-export type Id = string | number;
+export type Id = unknown;
 export type NamedFunctions = Map<Id, RunFunction>;
-export type DepGraph = Map<Id, Set<Id>>;
-export type ScopeFunction = (graph: DepGraph) => Id[];
+export type DepGraphMap = Map<Id, Set<Id>>;
+export type ScopeFunction = (graph: DepGraphMap) => Id[];
+export type DepGraphArray = [RunFunction, RunFunction][];

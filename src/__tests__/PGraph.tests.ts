@@ -1,10 +1,10 @@
 import { PGraph } from "../PGraph";
-import { NamedFunctions, DepGraph } from "../types";
+import { NamedFunctions, DepGraphMap } from "../types";
 
 describe("PGraph", () => {
   it("should allow a full graph to be created", async () => {
     const fns: NamedFunctions = new Map();
-    const graph: DepGraph = new Map();
+    const graph: DepGraphMap = new Map();
 
     const mockFn = jest.fn((id) => Promise.resolve());
 
