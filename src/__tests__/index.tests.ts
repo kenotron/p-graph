@@ -4,6 +4,7 @@ import { DepGraphArray } from "../types";
 describe("Public API", () => {
   let calls = [];
 
+  // Example graph from: https://www.npmjs.com/package/toposort
   const putOnShirt = () =>
     Promise.resolve("put on your shirt").then((v) => {
       calls.push(v);
@@ -30,7 +31,6 @@ describe("Public API", () => {
   });
 
   it("should accept an array dep graph", async () => {
-    // Example graph from: https://www.npmjs.com/package/toposort
     const graph: DepGraphArray = [
       [putOnShoes, tieShoes],
       [putOnShirt, putOnJacket],
@@ -50,7 +50,6 @@ describe("Public API", () => {
   });
 
   it("should accept an array dep graph", async () => {
-    // Example graph from: https://www.npmjs.com/package/toposort
     const graph: DepGraphArray = [
       [putOnShoes, tieShoes],
       [putOnShirt, putOnJacket],
