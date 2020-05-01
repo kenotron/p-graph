@@ -13,7 +13,7 @@ $ npm install p-graph
 The p-graph library takes in a `graph` and an `options` argument. To start, create a graph of functions that return promises (let's call them Run Functions), then run them through the pGraph API:
 
 ```js
-const pGraph = require("p-graph"); // ES6 import also works: import pGraph from 'p-graph';
+const { default: pGraph } = require("p-graph"); // ES6 import also works: import pGraph from 'p-graph';
 
 const putOnShirt = () => Promise.resolve("put on your shirt");
 const putOnShorts = () => Promise.resolve("put on your shorts");

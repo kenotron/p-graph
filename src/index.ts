@@ -98,5 +98,4 @@ function pGraph<
   return new PGraph(namedFunctions, graph, options);
 }
 
-exports = pGraph;
 export default pGraph;
