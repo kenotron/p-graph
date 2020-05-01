@@ -2,6 +2,21 @@
   "name": "p-graph",
   "entries": [
     {
+      "date": "Fri, 01 May 2020 19:12:59 GMT",
+      "tag": "p-graph_v0.3.3",
+      "version": "0.3.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "this lib is using esm default to publish, so it's a bit different in how to require",
+            "author": "kchau@microsoft.com",
+            "commit": "9a97d9f11a3da35ec6bc7f6230e51846d6bf73a8",
+            "package": "p-graph"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 01 May 2020 18:26:56 GMT",
       "tag": "p-graph_v0.3.2",
       "version": "0.3.2",

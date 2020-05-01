@@ -1,8 +1,0 @@
-{
-  "type": "patch",
-  "comment": "this lib is using esm default to publish, so it's a bit different in how to require",
-  "packageName": "p-graph",
-  "email": "kchau@microsoft.com",
-  "dependentChangeType": "patch",
-  "date": "2020-05-01T19:12:37.062Z"
-}

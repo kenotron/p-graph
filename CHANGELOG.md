@@ -1,8 +1,16 @@
 # Change Log - p-graph
 
-This log was last generated on Fri, 01 May 2020 18:26:56 GMT and should not be manually modified.
+This log was last generated on Fri, 01 May 2020 19:12:59 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.3
+
+Fri, 01 May 2020 19:12:59 GMT
+
+### Patches
+
+- this lib is using esm default to publish, so it's a bit different in how to require (kchau@microsoft.com)
 
 ## 0.3.2
 
