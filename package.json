@@ -16,7 +16,7 @@
     "p-queue": "^6.3.0"
   },
   "repository": {
-    "url": "https://github.com/kenotron/p-queue"
+    "url": "https://github.com/kenotron/p-graph"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
