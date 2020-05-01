@@ -19,7 +19,7 @@ export class PGraph<
   constructor(
     namedFunctions: NamedFunctions,
     graph: DepGraph,
-    options: Options<QueueType, EnqueueOptionsType>
+    options?: Options<QueueType, EnqueueOptionsType>
   ) {
     this.promises = new Map();
     this.q = new PQueue(options);

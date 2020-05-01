@@ -1,13 +1,20 @@
 {
   "name": "p-graph",
   "version": "0.1.0",
-  "main": "lib/index.js",
   "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w --preserveWatchOutput",
+    "test": "jest"
+  },
   "dependencies": {
     "p-queue": "^6.3.0"
   },
   "devDependencies": {
-    "typescript": "^3.8.3",
-    "jest": "^25.5.3"
+    "@types/jest": "^25.2.1",
+    "jest": "^25.5.3",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
   }
 }
