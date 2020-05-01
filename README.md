@@ -117,19 +117,6 @@ funcs.set("putOnShoes", thatImportantTask);
 funcs.set("tieShoes", thatImportantTask);
 ```
 
-As mentioned earlier, you really can put anything in here as the ID:
-
-```js
-const funcs = new Map();
-const thatImportantTask = ([a, b]) => Promise.resolve(a + b);
-
-funcs.set([1, 2], thatImportantTask);
-funcs.set([2, 4], thatImportantTask);
-funcs.set([4, 3], thatImportantTask);
-funcs.set([3, 7], thatImportantTask);
-funcs.set([3, 1], thatImportantTask);
-```
-
 ## Scopes and filtering
 
 After a graph and option are sent to the `pGraph` function, the graph is executed with the `run()` function. The `run()` takes in an argument that lets you filter which tasks to end. This allows you to run tasks up to a certain point in the graph.
