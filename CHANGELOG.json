@@ -2,6 +2,21 @@
   "name": "p-graph",
   "entries": [
     {
+      "date": "Fri, 01 May 2020 17:39:19 GMT",
+      "tag": "p-graph_v0.2.3",
+      "version": "0.2.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fixes the url",
+            "author": "kchau@microsoft.com",
+            "commit": "7c7ebfcd0ef6794ff2f6bffc9bfbd3888fe07447",
+            "package": "p-graph"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 01 May 2020 17:37:29 GMT",
       "tag": "p-graph_v0.2.2",
       "version": "0.2.2",
