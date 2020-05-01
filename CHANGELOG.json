@@ -2,6 +2,21 @@
   "name": "p-graph",
   "entries": [
     {
+      "date": "Fri, 01 May 2020 18:21:34 GMT",
+      "tag": "p-graph_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "making public api work with 2 args with options",
+            "author": "kchau@microsoft.com",
+            "commit": "4198ea4a7d95ba40d423d4d98fba9e73f0f750e5",
+            "package": "p-graph"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 01 May 2020 17:55:50 GMT",
       "tag": "p-graph_v0.2.4",
       "version": "0.2.4",
