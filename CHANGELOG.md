@@ -1,8 +1,16 @@
 # Change Log - p-graph
 
-This log was last generated on Fri, 01 May 2020 18:21:34 GMT and should not be manually modified.
+This log was last generated on Fri, 01 May 2020 18:25:27 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.1
+
+Fri, 01 May 2020 18:25:27 GMT
+
+### Patches
+
+- one more way of doing pGraph() call in types (kchau@microsoft.com)
 
 ## 0.3.0
 
