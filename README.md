@@ -30,3 +30,5 @@ const graph = [
 
 pGraph(graph, { concurrency: 3 }); // returns a promise that will resolve when all the tasks are done from this graph in order
 ```
+
+Another way to specify the graph is by using IDs and dependency

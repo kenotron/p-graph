@@ -3,6 +3,7 @@ import PriorityQueue from "p-queue/dist/priority-queue";
 import { RunFunction } from "p-queue/dist/queue";
 import { DepGraphArray, NamedFunctions, DepGraphMap } from "./types";
 import { PGraph } from "./PGraph";
+import { depArrayToNamedFunctions, depArrayToMap } from "./depConverters";
 
 function pGraph<
   QueueType extends Queue<RunFunction, EnqueueOptionsType> = PriorityQueue,
@@ -35,26 +36,20 @@ function pGraph<
       );
     }
 
-    const namedFunctions: NamedFunctions = new Map();
-    const graph: DepGraphMap = new Map();
-
-    // dependant depends on subject (Child depends on Parent means Child is dependent, Parent is subject)
-    for (const [subject, dependent] of args[0] as DepGraphArray) {
-      namedFunctions.set(subject, subject);
-      namedFunctions.set(dependent, dependent);
-
-      if (!graph.has(dependent)) {
-        graph.set(dependent, new Set([subject]));
-      } else {
-        graph.get(dependent).add(subject);
-      }
-    }
-
+    const depArray = args[0] as DepGraphArray;
+    const namedFunctions = depArrayToNamedFunctions(depArray);
+    const graph = depArrayToMap(depArray);
     return new PGraph(namedFunctions, graph, options);
   } else {
     const options = args[2] as Options<QueueType, EnqueueOptionsType>;
-    const graph = args[1] as DepGraphMap;
     const namedFunctions = args[0] as NamedFunctions;
+    let graph: DepGraphMap;
+
+    if (Array.isArray(args[1])) {
+      graph = depArrayToMap(args[1]);
+    } else {
+      graph = args[1];
+    }
 
     const pGraph = new PGraph(namedFunctions, graph, options);
     pGraph.namedFunctions = args[0];
@@ -64,5 +59,5 @@ function pGraph<
   }
 }
 
-module.exports = pGraph;
-module.exports.default = pGraph;
+exports = pGraph;
+export default pGraph;
