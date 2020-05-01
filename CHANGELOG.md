@@ -1,8 +1,16 @@
 # Change Log - p-graph
 
-This log was last generated on Fri, 01 May 2020 16:30:46 GMT and should not be manually modified.
+This log was last generated on Fri, 01 May 2020 17:37:29 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.2
+
+Fri, 01 May 2020 17:37:29 GMT
+
+### Patches
+
+- updates the readme.md and added a url to the package.json (kchau@microsoft.com)
 
 ## 0.2.1
 
