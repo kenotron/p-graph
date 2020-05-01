@@ -1,0 +1,19 @@
+{
+  "name": "p-graph",
+  "entries": [
+    {
+      "date": "Fri, 01 May 2020 16:15:38 GMT",
+      "tag": "p-graph_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "kchau@microsoft.com",
+            "commit": "9ee9ae8897acc7213768680b37c1cb3b18234bb6",
+            "package": "p-graph"
+          }
+        ]
+      }
+    }
+  ]
+}
