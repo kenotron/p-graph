@@ -1,22 +1,18 @@
-import {
-  DepGraphArray,
-  NamedFunctions,
-  DepGraphMap,
-  DepGraphIdArray,
-} from "./types";
+import { DepGraphArray, NamedFunctions, DepGraphMap } from "./types";
+import { RunFunction } from "p-queue/dist/queue";
 
 export function depArrayToNamedFunctions(array: DepGraphArray) {
   const namedFunctions: NamedFunctions = new Map();
 
   // dependant depends on subject (Child depends on Parent means Child is dependent, Parent is subject)
   for (const [subject, dependent] of array) {
-    namedFunctions.set(subject, subject);
-    namedFunctions.set(dependent, dependent);
+    namedFunctions.set(subject, subject as RunFunction);
+    namedFunctions.set(dependent, dependent as RunFunction);
   }
   return namedFunctions;
 }
 
-export function depArrayToMap(array: DepGraphIdArray) {
+export function depArrayToMap(array: DepGraphArray) {
   const graph: DepGraphMap = new Map();
 
   // dependant depends on subject (Child depends on Parent means Child is dependent, Parent is subject)

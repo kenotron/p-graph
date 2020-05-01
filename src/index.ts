@@ -11,25 +11,30 @@ function pGraph<
 >(
   namedFunctions: NamedFunctions,
   graph: DepGraphMap,
-  options: Options<QueueType, EnqueueOptionsType>
+  options?: Partial<Options<QueueType, EnqueueOptionsType>>
 );
 
 function pGraph<
   QueueType extends Queue<RunFunction, EnqueueOptionsType> = PriorityQueue,
   EnqueueOptionsType extends QueueAddOptions = DefaultAddOptions
->(graph: DepGraphArray, options: Options<QueueType, EnqueueOptionsType>);
+>(
+  graph: DepGraphArray,
+  options?: Partial<Options<QueueType, EnqueueOptionsType>>
+);
 
 function pGraph<
   QueueType extends Queue<RunFunction, EnqueueOptionsType> = PriorityQueue,
   EnqueueOptionsType extends QueueAddOptions = DefaultAddOptions
 >(...args: any[]) {
-  if (args.length < 2 || args.length > 3) {
+  if (args.length < 1 || args.length > 3) {
     throw new Error("Incorrect number of arguments");
   }
 
-  if (args.length === 2) {
-    const options = args[1] as Options<QueueType, EnqueueOptionsType>;
+  let namedFunctions: NamedFunctions;
+  let graph: DepGraphMap;
+  let options: Partial<Options<QueueType, EnqueueOptionsType>>;
 
+  if (args.length === 1) {
     if (!Array.isArray(args[0])) {
       throw new Error(
         "Unexpected graph definition format. Expecting graph in the form of [()=>Promise, ()=>Promise][]"
@@ -37,9 +42,32 @@ function pGraph<
     }
 
     const depArray = args[0] as DepGraphArray;
-    const namedFunctions = depArrayToNamedFunctions(depArray);
-    const graph = depArrayToMap(depArray);
-    return new PGraph(namedFunctions, graph, options);
+    namedFunctions = depArrayToNamedFunctions(depArray);
+    graph = depArrayToMap(depArray);
+    options = {};
+  } else if (args.length === 2) {
+    if (Array.isArray(args[0])) {
+      const depArray = args[0] as DepGraphArray;
+      namedFunctions = depArrayToNamedFunctions(depArray);
+      graph = depArrayToMap(depArray);
+      options = {};
+    } else if (args[0] instanceof Map && Array.isArray(args[1])) {
+      const depArray = args[1] as DepGraphArray;
+      namedFunctions = args[0];
+      graph = depArrayToMap(depArray);
+      options = {};
+    } else if (args[0] instanceof Map && args[1] instanceof Map) {
+      namedFunctions = args[0];
+      graph = args[1];
+      options = {};
+    } else if (Array.isArray(args[0])) {
+      const depArray = args[0] as DepGraphArray;
+      namedFunctions = depArrayToNamedFunctions(depArray);
+      graph = depArrayToMap(depArray);
+      options = args[1];
+    } else {
+      throw new Error("Unexpected arguments");
+    }
   } else {
     const options = args[2] as Options<QueueType, EnqueueOptionsType>;
     const namedFunctions = args[0] as NamedFunctions;
@@ -57,6 +85,8 @@ function pGraph<
 
     return pGraph;
   }
+
+  return new PGraph(namedFunctions, graph, options);
 }
 
 exports = pGraph;
