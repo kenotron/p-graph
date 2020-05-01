@@ -2,6 +2,21 @@
   "name": "p-graph",
   "entries": [
     {
+      "date": "Fri, 01 May 2020 18:25:27 GMT",
+      "tag": "p-graph_v0.3.1",
+      "version": "0.3.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "one more way of doing pGraph() call in types",
+            "author": "kchau@microsoft.com",
+            "commit": "c1da50e3d23c4807ce8f486015ed33cb65f9f69d",
+            "package": "p-graph"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 01 May 2020 18:21:34 GMT",
       "tag": "p-graph_v0.3.0",
       "version": "0.3.0",
