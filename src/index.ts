@@ -78,21 +78,14 @@ function pGraph<
       throw new Error("Unexpected arguments");
     }
   } else {
-    const options = args[2] as Options<QueueType, EnqueueOptionsType>;
-    const namedFunctions = args[0] as NamedFunctions;
-    let graph: DepGraphMap;
+    options = args[2] as Options<QueueType, EnqueueOptionsType>;
+    namedFunctions = args[0] as NamedFunctions;
 
     if (Array.isArray(args[1])) {
       graph = depArrayToMap(args[1]);
     } else {
       graph = args[1];
     }
-
-    const pGraph = new PGraph(namedFunctions, graph, options);
-    pGraph.namedFunctions = args[0];
-    pGraph.graph = args[1];
-
-    return pGraph;
   }
 
   return new PGraph(namedFunctions, graph, options);
