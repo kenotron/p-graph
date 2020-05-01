@@ -64,4 +64,5 @@ function pGraph<
   }
 }
 
-export default pGraph;
+module.exports = pGraph;
+module.exports.default = pGraph;
