@@ -2,6 +2,21 @@
   "name": "p-graph",
   "entries": [
     {
+      "date": "Fri, 01 May 2020 17:55:50 GMT",
+      "tag": "p-graph_v0.2.4",
+      "version": "0.2.4",
+      "comments": {
+        "patch": [
+          {
+            "comment": "removed the section of readme that is known not to work",
+            "author": "kchau@microsoft.com",
+            "commit": "e25641e2e34d952eb7ae30af79c3269d340ace23",
+            "package": "p-graph"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 01 May 2020 17:39:19 GMT",
       "tag": "p-graph_v0.2.3",
       "version": "0.2.3",
