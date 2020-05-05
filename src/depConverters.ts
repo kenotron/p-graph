@@ -1,5 +1,9 @@
-import { DepGraphArray, NamedFunctions, DepGraphMap } from "./types";
-import { RunFunction } from "p-queue/dist/queue";
+import {
+  DepGraphArray,
+  NamedFunctions,
+  DepGraphMap,
+  RunFunction,
+} from "./types";
 
 export function depArrayToNamedFunctions(array: DepGraphArray) {
   const namedFunctions: NamedFunctions = new Map();
