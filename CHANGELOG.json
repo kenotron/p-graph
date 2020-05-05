@@ -2,6 +2,21 @@
   "name": "p-graph",
   "entries": [
     {
+      "date": "Tue, 05 May 2020 21:42:11 GMT",
+      "tag": "p-graph_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "none": [
+          {
+            "comment": "adding test before release",
+            "author": "kchau@microsoft.com",
+            "commit": "4acba927925474f330d00abcbdfb85b261185bec",
+            "package": "p-graph"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 05 May 2020 21:41:06 GMT",
       "tag": "p-graph_v0.4.0",
       "version": "0.4.0",
