@@ -1,8 +1,20 @@
 # Change Log - p-graph
 
-This log was last generated on Fri, 01 May 2020 20:41:56 GMT and should not be manually modified.
+This log was last generated on Tue, 05 May 2020 21:41:06 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.4.0
+
+Tue, 05 May 2020 21:41:06 GMT
+
+### Minor changes
+
+- ripped out the dependency on p-queue (kchau@microsoft.com)
+
+### Patches
+
+- fix typings (kchau@microsoft.com)
 
 ## 0.3.4
 

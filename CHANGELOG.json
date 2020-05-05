@@ -2,6 +2,29 @@
   "name": "p-graph",
   "entries": [
     {
+      "date": "Tue, 05 May 2020 21:41:06 GMT",
+      "tag": "p-graph_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "patch": [
+          {
+            "comment": "fix typings",
+            "author": "kchau@microsoft.com",
+            "commit": "8c344d7555cece152271094fb19e0a2d454aab61",
+            "package": "p-graph"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "ripped out the dependency on p-queue",
+            "author": "kchau@microsoft.com",
+            "commit": "0471bdb2615e368c3d801798a255d603569ddb64",
+            "package": "p-graph"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 01 May 2020 20:41:56 GMT",
       "tag": "p-graph_v0.3.4",
       "version": "0.3.4",
