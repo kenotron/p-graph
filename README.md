@@ -1,6 +1,6 @@
 # p-graph
 
-Promise graph with concurrency control, built on top of the excellent [p-queue](https://github.com/sindresorhus/p-queue) library.
+Run a promise graph with concurrency control.
 
 ## Install
 
@@ -10,7 +10,7 @@ $ npm install p-graph
 
 ## Usage
 
-The p-graph library takes in a `graph` and an `options` argument. To start, create a graph of functions that return promises (let's call them Run Functions), then run them through the pGraph API:
+The p-graph library takes in a `graph` argument. To start, create a graph of functions that return promises (let's call them Run Functions), then run them through the pGraph API:
 
 ```js
 const { default: pGraph } = require("p-graph"); // ES6 import also works: import pGraph from 'p-graph';
@@ -119,7 +119,7 @@ funcs.set("tieShoes", thatImportantTask);
 
 ## Scopes and filtering
 
-After a graph and option are sent to the `pGraph` function, the graph is executed with the `run()` function. The `run()` takes in an argument that lets you filter which tasks to end. This allows you to run tasks up to a certain point in the graph.
+After a graph are sent to the `pGraph` function, the graph is executed with the `run()` function. The `run()` takes in an argument that lets you filter which tasks to end. This allows you to run tasks up to a certain point in the graph.
 
 ```js
 // graph is one of the three options up top
@@ -129,7 +129,3 @@ await pGraph(graph).run((depMap) => {
   return [...depMap.keys()].filter((id) => id.startsWith("b"));
 });
 ```
-
-## Options
-
-All the options are exactly the same as [the options from p-queue](https://www.npmjs.com/package/p-queue#options). The main one of interest is probably `concurrency`. The feature from `p-queue` is that it can do priority queuing while p-graph currently does not take in an option per task to have specific priority associated.

@@ -38,7 +38,7 @@ describe("Public API", () => {
       [putOnShorts, putOnShoes],
     ];
 
-    await pGraph(graph, { concurrency: 1 }).run();
+    await pGraph(graph).run();
 
     expect(calls).toEqual([
       "put on your shirt",
@@ -57,7 +57,7 @@ describe("Public API", () => {
       [putOnShorts, putOnShoes],
     ];
 
-    await pGraph(graph, { concurrency: 15 }).run();
+    await pGraph(graph).run();
 
     expect(calls.indexOf("tie your shoes")).toBeGreaterThan(
       calls.indexOf("put on your shoes")

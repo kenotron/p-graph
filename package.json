@@ -8,12 +8,9 @@
     "build": "tsc",
     "start": "tsc -w --preserveWatchOutput",
     "test": "jest",
-    "release": "beachball publish",
+    "release": "yarn build && beachball publish",
     "check": "beachball check",
     "change": "beachball change"
-  },
-  "dependencies": {
-    "p-queue": "^6.3.0"
   },
   "repository": {
     "url": "https://github.com/kenotron/p-graph"

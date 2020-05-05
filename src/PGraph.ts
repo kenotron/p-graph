@@ -1,32 +1,16 @@
-import { RunFunction, Queue } from "p-queue/dist/queue";
-import PQueue, {
-  QueueAddOptions,
-  DefaultAddOptions,
-  Options,
-} from "p-queue/dist";
-import PriorityQueue from "p-queue/dist/priority-queue";
 import { NamedFunctions, DepGraphMap, ScopeFunction, Id } from "./types";
 
-export class PGraph<
-  QueueType extends Queue<RunFunction, EnqueueOptionsType> = PriorityQueue,
-  EnqueueOptionsType extends QueueAddOptions = DefaultAddOptions
-> {
+export class PGraph {
   private promises: Map<Id, Promise<unknown>> = new Map();
-  private q: PQueue;
 
   namedFunctions: NamedFunctions;
   graph: DepGraphMap;
 
-  constructor(
-    namedFunctions,
-    graph: DepGraphMap,
-    options?: Options<QueueType, EnqueueOptionsType>
-  ) {
+  constructor(namedFunctions, graph: DepGraphMap) {
     this.namedFunctions = namedFunctions;
     this.graph = graph;
 
     this.promises = new Map();
-    this.q = new PQueue(options);
   }
 
   /**
@@ -56,9 +40,7 @@ export class PGraph<
       );
     }
 
-    execPromise = execPromise.then(() =>
-      this.q.add(() => this.namedFunctions.get(id)(id))
-    );
+    execPromise = execPromise.then(() => this.namedFunctions.get(id)(id));
 
     this.promises.set(id, execPromise);
 
